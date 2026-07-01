@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #faf8f5;
+  --color-blush: #e8c4c4;
+  --color-rose: #c9a0a0;
+  --color-gold: #c4a882;
+  --color-charcoal: #2d2a26;
+  --background: var(--color-cream);
+  --foreground: var(--color-charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--color-cream);
+  --color-blush: var(--color-blush);
+  --color-rose: var(--color-rose);
+  --color-gold: var(--color-gold);
+  --color-charcoal: var(--color-charcoal);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-cormorant);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-elegant-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-cream) 0%,
+    #f5f0eb 40%,
+    #f0e8e4 70%,
+    var(--color-cream) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 18s ease infinite;
+}
