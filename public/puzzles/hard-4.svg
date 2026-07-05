@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bg-hard4" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b2dfdb"/>
+      <stop offset="45%" stop-color="#00897b"/>
+      <stop offset="100%" stop-color="#004d40"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg-hard4)"/>
+  <path d="M300 180 C240 120 140 140 160 230 C175 300 300 380 300 380 C300 380 425 300 440 230 C460 140 360 120 300 180 Z" fill="#ffffff" opacity="0.45"/>
+  <text x="300" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#ffffff">FOREVER</text>
+  <text x="300" y="520" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#e0f2f1">hard puzzle 4</text>
+</svg>

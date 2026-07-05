@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bg-hard14" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecf7f5"/>
+      <stop offset="40%" stop-color="#4db6ac"/>
+      <stop offset="100%" stop-color="#00695c"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg-hard14)"/>
+  <circle cx="150" cy="150" r="60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="450" cy="450" r="90" fill="#ffffff" opacity="0.2"/>
+  <text x="300" y="310" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="#004d40">PROMISE</text>
+  <text x="300" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#00695c">hard puzzle 14</text>
+</svg>

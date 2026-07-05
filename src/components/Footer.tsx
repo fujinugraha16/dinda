@@ -7,13 +7,9 @@ export function Footer() {
 
   return (
     <FadeIn delay={0.2}>
-      <footer className="border-t border-blush/30 pt-10 text-center">
-        <p className="font-serif text-lg italic text-charcoal/70">
-          {closingLine}
-        </p>
-        <p className="mt-6 text-sm tracking-wide text-charcoal/40">
-          {year}
-        </p>
+      <footer className="border-t border-foam/50 pt-8 text-center sm:pt-10">
+        <p className="font-script text-lg text-navy/80 sm:text-xl">{closingLine}</p>
+        <p className="mt-4 text-xs tracking-wide text-navy/40 sm:mt-6 sm:text-sm">{year}</p>
       </footer>
     </FadeIn>
   );

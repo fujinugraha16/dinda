@@ -1,4 +1,5 @@
 import { birthdayContent } from "@/content/birthday";
+import { renderTextWithBold } from "@/lib/render-text-with-bold";
 import { FadeIn } from "./FadeIn";
 
 export function BirthdayMessage() {
@@ -6,14 +7,14 @@ export function BirthdayMessage() {
 
   return (
     <FadeIn delay={0.1}>
-      <div className="rounded-2xl border border-blush/40 bg-white/60 px-8 py-10 shadow-sm backdrop-blur-sm transition-shadow duration-500 hover:shadow-md">
-        <div className="space-y-6 text-center">
+      <div className="coastal-card rounded-2xl border px-5 py-6 sm:px-7 sm:py-8 md:px-8 md:py-10">
+        <div className="space-y-4 text-left sm:space-y-5 md:space-y-6">
           {messageParagraphs.map((paragraph, index) => (
             <p
               key={index}
-              className="text-base leading-relaxed text-charcoal/80 md:text-lg"
+              className="text-[0.9375rem] leading-relaxed text-navy/80 sm:text-base md:text-lg"
             >
-              {paragraph}
+              {renderTextWithBold(paragraph)}
             </p>
           ))}
         </div>

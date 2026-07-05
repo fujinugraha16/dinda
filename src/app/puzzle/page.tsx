@@ -1,9 +1,6 @@
-import { BirthdayMessage } from "@/components/BirthdayMessage";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { PuzzleReadySection } from "@/components/puzzle/PuzzleReadySection";
+import { PuzzlePageClient } from "@/components/puzzle/PuzzlePageClient";
 
-export default function Home() {
+export default function PuzzlePage() {
   return (
     <div className="bg-elegant-gradient relative min-h-dvh overflow-x-hidden">
       <div
@@ -15,11 +12,8 @@ export default function Home() {
         aria-hidden
       />
 
-      <main className="page-main relative mx-auto flex w-full max-w-lg flex-col gap-10 sm:max-w-xl sm:gap-12 md:max-w-2xl md:gap-16">
-        <Hero />
-        <BirthdayMessage />
-        <PuzzleReadySection />
-        <Footer />
+      <main className="page-main relative mx-auto flex w-full max-w-lg flex-col gap-8 sm:max-w-xl md:max-w-2xl">
+        <PuzzlePageClient />
       </main>
     </div>
   );

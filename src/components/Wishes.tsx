@@ -7,16 +7,18 @@ export function Wishes() {
   return (
     <FadeIn delay={0.15}>
       <div className="text-center">
-        <h2 className="mb-8 font-serif text-2xl font-medium text-charcoal md:text-3xl">
+        <h2 className="font-script mb-5 text-2xl text-navy sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl">
           Birthday Wishes
         </h2>
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
           {wishes.map((wish, index) => (
             <li
               key={index}
-              className="rounded-xl border border-gold/30 bg-white/50 px-6 py-5 text-charcoal/80 transition-colors duration-300 hover:border-rose/50 hover:bg-white/80"
+              className="coastal-card rounded-xl border px-4 py-4 text-left text-[0.9375rem] text-navy/80 sm:px-5 sm:py-5 sm:text-base md:text-center"
             >
-              <span className="mb-2 block font-serif text-lg text-rose">✦</span>
+              <span className="mb-1.5 block text-base text-ocean sm:mb-2 sm:text-lg" aria-hidden>
+                ⚓
+              </span>
               {wish}
             </li>
           ))}

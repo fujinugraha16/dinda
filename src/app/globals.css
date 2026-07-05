@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #faf8f5;
-  --color-blush: #e8c4c4;
-  --color-rose: #c9a0a0;
-  --color-gold: #c4a882;
-  --color-charcoal: #2d2a26;
-  --background: var(--color-cream);
-  --foreground: var(--color-charcoal);
+  --color-sky: #e0f2f1;
+  --color-foam: #b2dfdb;
+  --color-turquoise: #4db6ac;
+  --color-ocean: #00897b;
+  --color-navy: #004d40;
+  --color-deep: #00695c;
+  --color-sand: #e9c46a;
+  --color-white: #ffffff;
+
+  --color-cream: var(--color-sky);
+  --color-blush: var(--color-foam);
+  --color-rose: var(--color-ocean);
+  --color-gold: var(--color-sand);
+  --color-charcoal: var(--color-navy);
+  --background: var(--color-sky);
+  --foreground: var(--color-navy);
 }
 
 @theme inline {
@@ -18,34 +27,90 @@
   --color-rose: var(--color-rose);
   --color-gold: var(--color-gold);
   --color-charcoal: var(--color-charcoal);
+  --color-sky: var(--color-sky);
+  --color-foam: var(--color-foam);
+  --color-turquoise: var(--color-turquoise);
+  --color-ocean: var(--color-ocean);
+  --color-tosca: var(--color-ocean);
+  --color-navy: var(--color-navy);
+  --color-deep: var(--color-deep);
+  --color-sand: var(--color-sand);
   --font-sans: var(--font-dm-sans);
-  --font-serif: var(--font-cormorant);
+  --font-serif: var(--font-caveat);
+  --font-script: var(--font-caveat);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @keyframes gradientShift {
   0%,
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 0% 100%;
   }
 }
 
 .bg-elegant-gradient {
   background: linear-gradient(
-    135deg,
-    var(--color-cream) 0%,
-    #f5f0eb 40%,
-    #f0e8e4 70%,
-    var(--color-cream) 100%
+    180deg,
+    #e0f2f1 0%,
+    #ecf7f5 30%,
+    #ffffff 55%,
+    #c8ebe6 80%,
+    #b2dfdb 100%
   );
-  background-size: 200% 200%;
-  animation: gradientShift 18s ease infinite;
+  background-size: 100% 200%;
+  animation: gradientShift 24s ease infinite;
+}
+
+.coastal-card {
+  border-color: rgb(178 223 219 / 0.55);
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgb(0 77 64 / 0.06);
+}
+
+@media (min-width: 768px) {
+  .coastal-card {
+    box-shadow: 0 8px 32px rgb(0 77 64 / 0.08);
+  }
+}
+
+.btn-ocean {
+  background: var(--color-ocean);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-ocean:hover {
+  background: var(--color-deep);
+}
+
+.touch-target {
+  min-height: 2.75rem;
+}
+
+.page-main {
+  padding:
+    max(1rem, env(safe-area-inset-top))
+    max(1rem, env(safe-area-inset-right))
+    max(1.5rem, env(safe-area-inset-bottom))
+    max(1rem, env(safe-area-inset-left));
+}
+
+@media (min-width: 768px) {
+  .page-main {
+    padding:
+      max(2rem, env(safe-area-inset-top))
+      max(2rem, env(safe-area-inset-right))
+      max(2rem, env(safe-area-inset-bottom))
+      max(2rem, env(safe-area-inset-left));
+  }
 }

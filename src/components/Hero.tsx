@@ -1,33 +1,20 @@
-import Image from "next/image";
 import { birthdayContent } from "@/content/birthday";
 import { FadeIn } from "./FadeIn";
 
 export function Hero() {
-  const { recipientName, heroSubtitle } = birthdayContent;
+  const { heroTitle } = birthdayContent;
 
   return (
-    <FadeIn className="flex flex-col items-center text-center">
-      <p className="mb-4 text-sm font-medium tracking-[0.25em] uppercase text-rose">
+    <FadeIn className="flex flex-col items-center px-1 text-center">
+      <p className="font-script mb-2 text-3xl leading-tight text-navy sm:text-4xl md:text-5xl">
+        Finally found you!
+      </p>
+      <p className="mb-3 text-xs font-medium tracking-[0.2em] uppercase text-ocean sm:text-sm sm:tracking-[0.25em]">
         A celebration
       </p>
-      <h1 className="font-serif text-[clamp(2.5rem,8vw,4rem)] font-medium leading-tight tracking-tight text-charcoal">
-        Happy Birthday,
-        <br />
-        <span className="italic text-rose">{recipientName}</span>
+      <h1 className="font-script text-4xl leading-tight text-ocean sm:text-5xl md:text-6xl">
+        {heroTitle}
       </h1>
-      <div className="my-8 w-30">
-        <Image
-          src="/floral-accent.svg"
-          alt=""
-          width={120}
-          height={24}
-          aria-hidden
-          priority
-        />
-      </div>
-      <p className="max-w-md text-lg leading-relaxed text-charcoal/75">
-        {heroSubtitle}
-      </p>
     </FadeIn>
   );
 }
