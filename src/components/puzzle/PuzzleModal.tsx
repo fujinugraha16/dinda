@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Difficulty, PuzzleDefinition } from "@/content/puzzles";
+import { useLockBodyScroll } from "@/lib/use-lock-body-scroll";
 import { PuzzleModalContent } from "./PuzzleModalContent";
 
 type PuzzleModalProps = {
@@ -24,6 +25,8 @@ export function PuzzleModal({
   onSubmit,
   readOnly = false,
 }: PuzzleModalProps) {
+  useLockBodyScroll(Boolean(puzzle));
+
   useEffect(() => {
     if (!puzzle) return;
 
@@ -32,11 +35,9 @@ export function PuzzleModal({
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
     };
   }, [puzzle, onClose]);
 
@@ -44,7 +45,7 @@ export function PuzzleModal({
     <AnimatePresence>
       {puzzle && difficulty && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4"
+          className="fixed inset-0 z-50 flex items-end justify-center overflow-hidden sm:items-center sm:p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -59,7 +60,7 @@ export function PuzzleModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="puzzle-title"
-            className="relative z-10 max-h-[92dvh] w-full overflow-y-auto rounded-t-3xl border border-foam/60 border-b-0 bg-sky p-5 text-left shadow-xl shadow-ocean/10 sm:max-w-md sm:rounded-2xl sm:border-b sm:p-8"
+            className="relative z-10 max-h-[92dvh] min-h-0 w-full overflow-y-auto overscroll-contain rounded-t-3xl border border-foam/60 border-b-0 bg-sky p-5 text-left shadow-xl shadow-ocean/10 [-webkit-overflow-scrolling:touch] sm:max-w-md sm:rounded-2xl sm:border-b sm:p-8"
             style={{
               paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
             }}

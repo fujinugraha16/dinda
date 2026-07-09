@@ -5,7 +5,7 @@ import { PuzzleReadySection } from "@/components/puzzle/PuzzleReadySection";
 
 export default function Home() {
   return (
-    <div className="bg-elegant-gradient relative min-h-dvh overflow-x-hidden">
+    <div className="bg-elegant-gradient relative min-h-dvh overflow-x-clip">
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-turquoise/20 blur-3xl md:-right-20 md:-top-20 md:h-64 md:w-64"
         aria-hidden

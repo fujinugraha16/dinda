@@ -41,9 +41,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${caveat.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${caveat.variable} ${dmSans.variable} antialiased`}
     >
-      <body className="min-h-full text-navy">{children}</body>
+      <body className="min-h-dvh text-navy">{children}</body>
     </html>
   );
 }

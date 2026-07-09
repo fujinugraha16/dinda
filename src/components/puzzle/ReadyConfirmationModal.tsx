@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLockBodyScroll } from "@/lib/use-lock-body-scroll";
 import { buttonClassName } from "./QuestionPuzzle";
 
 type ReadyConfirmationModalProps = {
@@ -15,6 +16,8 @@ export function ReadyConfirmationModal({
   onConfirm,
   onClose,
 }: ReadyConfirmationModalProps) {
+  useLockBodyScroll(open);
+
   useEffect(() => {
     if (!open) return;
 
@@ -23,11 +26,9 @@ export function ReadyConfirmationModal({
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
     };
   }, [open, onClose]);
 
